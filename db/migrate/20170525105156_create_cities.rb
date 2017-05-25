@@ -4,6 +4,8 @@ class CreateCities < ActiveRecord::Migration
       t.string :name
       t.integer :temp
       t.integer :humidity
+      t.string :weather
+      t.string :wind
 
       t.timestamps(null: false)
     end
