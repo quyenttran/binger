@@ -14,6 +14,10 @@ gem 'rake'
 
 gem 'shotgun', '~>0.9.1'
 
+# Added
+gem 'dotenv'
+gem 'httparty'
+
 group :test do
   gem 'shoulda-matchers'
   gem 'rack-test'
