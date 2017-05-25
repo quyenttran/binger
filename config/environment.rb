@@ -10,10 +10,12 @@ require 'rubygems'
 
 require 'uri'
 require 'pathname'
+require 'rest-client'
 
 require 'pg'
 require 'active_record'
 require 'logger'
+require 'dotenv'
 
 require 'sinatra'
 require "sinatra/reloader" if development?
