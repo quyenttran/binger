@@ -17,6 +17,7 @@ gem 'shotgun', '~>0.9.1'
 # Added
 gem 'dotenv'
 gem 'httparty'
+gem 'bcrypt'
 
 group :test do
   gem 'shoulda-matchers'
