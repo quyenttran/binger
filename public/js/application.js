@@ -62,4 +62,6 @@ $(document).ready(function() {
       $('#results-container').append(response.to_html)
     })
   })
+
+  $('')
 });

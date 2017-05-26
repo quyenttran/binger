@@ -2,6 +2,6 @@
 
 <ul>
   <% @searches.each do |search| %>
-    <li><%= search.name %><%= search.content.length > 20 ? "  -  #{search.content[0..100]}..." : "  -  No results" %></li>
+    <li class='recent-search'><%= search.name %><%= search.content.length > 20 ? "  -  #{search.content[0..100]}..." : "  -  No results" %></li>
   <% end %>
 </ul>
