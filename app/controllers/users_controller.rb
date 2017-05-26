@@ -57,7 +57,7 @@ get '/users/:id' do
   if current_user
     @user = current_user
     @searches = @user.searches.order('updated_at DESC').limit(10)
-    puts "request is #{request.xhr?}"
+
     if request.xhr?
       content_type :json
       form_html = erb :'users/show', layout: false, locals: {user: @user, searches: @searches}

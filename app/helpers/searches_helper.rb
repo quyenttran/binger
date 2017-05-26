@@ -1,5 +1,5 @@
 def search_response(search)
-  RestClient.get "https://simple.wikipedia.org/w/api.php?action=query&prop=extracts&format=json&exintro=&titles=#{search.split.join('%20')}&redirects"
+  RestClient.get "https://simple.wikipedia.org/w/api.php?action=query&prop=extracts&format=json&exintro=&titles=#{search.split.map(&:capitalize).join('%20')}&redirects"
 end
 
 def extract_summary(response)

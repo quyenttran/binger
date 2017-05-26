@@ -9,7 +9,6 @@ $(document).ready(function() {
       dataType: 'json'
     }).done(function(response){
       $('#results-container').empty()
-      // $('#search-form').hide()
       $('#results-container').append(response.to_html)
     })
   })
