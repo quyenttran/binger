@@ -27,6 +27,7 @@ GEM
     diff-lcs (1.2.5)
     domain_name (0.5.20170404)
       unf (>= 0.0.5, < 1.0.0)
+    dotenv (2.2.1)
     factory_girl (4.5.0)
       activesupport (>= 3.0.0)
     faker (1.4.3)
@@ -34,7 +35,7 @@ GEM
     http-cookie (1.0.3)
       domain_name (~> 0.5)
     i18n (0.7.0)
-    json (1.8.2)
+    json (1.8.6)
     mime-types (2.4.3)
     mini_portile (0.6.2)
     minitest (5.5.1)
@@ -99,8 +100,10 @@ DEPENDENCIES
   activerecord (~> 4.2.0)
   activesupport (~> 4.2.0)
   capybara
+  dotenv (~> 2.2, >= 2.2.1)
   factory_girl
   faker
+  json (~> 1.8, >= 1.8.3)
   pg
   rack-test
   rake

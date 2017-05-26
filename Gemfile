@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'dotenv', '~> 2.2', '>= 2.2.1'
+
 # PostgreSQL driver
 gem 'pg'
 
@@ -15,6 +17,7 @@ gem 'rake'
 gem 'shotgun', '~>0.9.1'
 gem 'rest-client', '~> 1.8'
 gem 'GuideboxWrapper', '~> 0.1.9'
+gem 'json', '~> 1.8', '>= 1.8.3'
 
 group :test do
   gem 'shoulda-matchers'
