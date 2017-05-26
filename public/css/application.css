@@ -83,7 +83,8 @@ a:visited {
 
 hr {
   border: solid 3px black;
-  width: 100%; }
+  width: 100%;
+  box-shadow: 2px 2px 0px 0px lightgrey; }
 
 .thick-border, button, input, .content-wrapper {
   border: solid 5px black; }
