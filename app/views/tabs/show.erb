@@ -3,7 +3,7 @@
   <h3 class="lyrics-header">by <%= @artist %></h3>
   <% @tab.lyrics.each do |lyric| %>
     <% if lyric.lyric.downcase != lyric.lyric %><br><% end %>
-    <div class='lyric-container'>
+    <div class='lyric-container lyric-container-show'>
       <p><% if lyric.chord %><%= lyric.chord %><% else %><%= " " %><% end %></p>
       <p><%= lyric.lyric %></p>
     </div>

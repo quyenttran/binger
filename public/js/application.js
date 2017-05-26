@@ -3,5 +3,8 @@ $(document).ready(function() {
     if ($(this).val().length > 0) {
       $(this).css("background-color","yellow")
     }
+    else if ($(this).val().length === 0) {
+      $(this).css("background-color","white")
+    }
   })
 });

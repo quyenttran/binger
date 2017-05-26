@@ -10,7 +10,11 @@ module LyricsHelpers
 
   def print_lyrics(lyrics)
     printout = ""
-    lyrics.split(" ").each_with_index { |lyric, index| printout.concat(" " + print(lyric, index)) }
+    puts lyrics
+    p lyrics
+    lyrics = lyrics.gsub("\n\n\n", "\n").gsub("\n\n", "\n")
+    lyrics = lyrics.gsub("\n","<br> ")
+    lyrics.split(" ").each_with_index { |lyric, index| p lyric; printout.concat(" " + print(lyric, index)) }
     printout
   end
 
@@ -18,10 +22,10 @@ module LyricsHelpers
 
   def print(lyric, index)
     lyric_val = lyric.gsub('\'','&#39;')
-    if lyric.downcase == lyric
-      "<div class='lyric-container'><input class='lyric_lyric' name='chords[#{index}]'><label class='lyric_lyric'><input type='hidden' name='lyrics[#{index}]' value='#{lyric_val}'>#{lyric}</label></div>"
+    if lyric.include?("<br>")
+      "<div class='lyric-container'><input class='lyric_lyric' name='chords[#{index}]'><label class='lyric_lyric'><input type='hidden' name='lyrics[#{index}]' value='#{lyric_val}'>#{lyric}</label></div><br>"
     else
-      "<br><div class='lyric-container'><input class='lyric_lyric' name='chords[#{index}]'><label class='lyric_lyric'><input type='hidden' name='lyrics[#{index}]' value='#{lyric_val}'>#{lyric}</label></div>"
+      "<div class='lyric-container'><input class='lyric_lyric' name='chords[#{index}]'><label class='lyric_lyric'><input type='hidden' name='lyrics[#{index}]' value='#{lyric_val}'>#{lyric}</label></div>"
     end
   end
 

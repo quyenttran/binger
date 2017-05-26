@@ -125,6 +125,9 @@ hr {
   font-family: "Roboto Slab", serif;
   width: 100%; }
 
+.lyric-container-show {
+  margin: 5px 0; }
+
 .lyrics-header {
   font-family: "News Cycle", sans-serif; }
 
@@ -139,6 +142,9 @@ hr {
 
 label.lyric_lyric {
   margin: 5px 0; }
+
+.tab-button {
+  margin: 20px 0 0 0; }
 
 .tab-container {
   margin: 10px 0; }
