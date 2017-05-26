@@ -1,0 +1,24 @@
+<% if @errors %>
+  <span>Something went wrong while registering!</span>
+  <ul>
+    <% @errors.each do |error| %>
+      <li> <%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<div class="register">
+
+<h2> Register New User: </h2>
+
+<form class="new-user-form" action='/users' method="post">
+  <label> Username: </label>
+  <input type="text" name="user[username]" placeholder="your username here" value="<%= @user.username %>"></br>
+  <label> Email: </label>
+  <input type="text" name="user[email]" placeholder="your email here" value="<%= @user.email %>"></br>
+  <label> Password: </label>
+  <input type="password" name="user[password]"></br> </br>
+  <button type="submit" class="btn btn-default">Register!</button>
+</form>
+
+</div>

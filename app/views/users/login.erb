@@ -1,0 +1,20 @@
+<h2> Log In: </h2>
+<form class="login-form" action='/users/login' method='post'>
+
+<% if @errors %>
+  <span>Something went wrong while logging in!</span>
+  <ul>
+    <% @errors.each do |error| %>
+      <li> <%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+  <label> Email: </label>
+  <input type="email" name="user[email]" placeholder="your email here">
+  <br>
+  <label> Password: </label>
+  <input type="password" name="user[password]" placeholder="Password">
+  <br>
+  <button type="submit" class="login-button">Log In!</button>
+</form>
