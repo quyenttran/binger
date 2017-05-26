@@ -1,0 +1,12 @@
+<span>ELI5</span>
+<form action="/searches" method="post" id='search-form'>
+  <input type="text" name="search">
+  <button type='submit'>Search</button>
+</form>
+<% if current_user %>
+  <a href="/users/<%= current_user.id %>" class='nav-link' id='show-user'><%= current_user.username %></a>
+  <a href="/users/logout" class='nav-link' id='logout'>Logout</a>
+<% else %>
+  <a href="/users/new" id='new-user' class='nav-link'>Register</a>
+  <a href="/users/login" id='login' class='nav-link'>Login</a>
+<% end %>

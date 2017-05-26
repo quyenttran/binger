@@ -22,16 +22,35 @@ post '/users/login' do
   if User.authenticate(params[:user])
     user = User.find_by(email: params[:user][:email])
     session[:user_id] = user.id
-    redirect to "/"
+    if request.xhr?
+      content_type :json
+      nav_html = erb :'users/_nav', layout: false
+      {to_html: "<h1>Welcome back, #{user.username}!</h1>", nav: nav_html}.to_json
+    else
+      redirect to "/"
+    end
   else
     @error_messages = 'Your username or password was incorrect.'
-    erb :'/users/login'
+    if request.xhr?
+      content_type :json
+      nav_html = erb :'users/_nav', layout: false
+      form_html = erb :'users/login', layout: false, locals: {errors: @error_messages}
+      {to_html: form_html, nav: nav_html}.to_json
+    else
+      erb :'/users/login'
+    end
   end
 end
 
 get '/users/logout' do
   session[:user_id] = nil
-  redirect '/'
+
+  if request.xhr?
+    nav_html = erb :'users/_nav', layout: false
+    {nav: nav_html}.to_json
+  else
+    redirect '/'
+  end
 end
 
 get '/users/:id' do
@@ -55,10 +74,23 @@ post '/users' do
   user = User.new_user(params[:user])
   if user.save
     session[:user_id] = user.id
-    redirect "/"
+    if request.xhr?
+      content_type :json
+      nav_html = erb :'users/_nav', layout: false
+      {to_html: "<h1>Welcome, #{user.username}!</h1>", nav: nav_html}.to_json
+    else
+      redirect "/"
+    end
   else
       @error_messages = user.errors.full_messages
-      erb:'users/new'
+      if request.xhr?
+        content_type :json
+        nav_html = erb :'users/_nav', layout: false
+        form_html = erb :'users/new', layout: false, locals: {errors: @error_messages}
+        {to_html: form_html, nav: nav_html}.to_json
+      else
+        erb:'users/new'
+      end
   end
 end
 
