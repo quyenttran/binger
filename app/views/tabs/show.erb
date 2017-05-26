@@ -2,10 +2,17 @@
   <h2 class="lyrics-header"><%= @song %></h2>
   <h3 class="lyrics-header">by <%= @artist %></h3>
   <% @tab.lyrics.each do |lyric| %>
-    <% if lyric.lyric.downcase != lyric.lyric %><br><% end %>
-    <div class='lyric-container lyric-container-show'>
-      <p><% if lyric.chord %><%= lyric.chord %><% else %><%= " " %><% end %></p>
-      <p><%= lyric.lyric %></p>
-    </div>
+    <% if lyric.lyric.include?("<br>")%>
+      <div class='lyric-container lyric-container-show'>
+        <p><% if lyric.chord %><%= lyric.chord %><% else %><%= " " %><% end %></p>
+        <p><%= lyric.lyric %></p>
+      </div>
+      <br>
+    <% else %>
+      <div class='lyric-container lyric-container-show'>
+        <p><% if lyric.chord %><%= lyric.chord %><% else %><%= " " %><% end %></p>
+        <p><%= lyric.lyric %></p>
+      </div>
+    <% end %>
   <% end %>
 </div>
