@@ -6,12 +6,13 @@ gem 'pg'
 # Sinatra driver
 gem 'sinatra', '~> 1.0'
 gem 'sinatra-contrib'
-
 gem 'activesupport', '~>4.2.0'
 gem 'activerecord', '~>4.2.0'
-
+gem 'dotenv'
+gem 'json'
+gem 'rest-client'
 gem 'rake'
-
+gem 'bcrypt'
 gem 'shotgun', '~>0.9.1'
 
 group :test do

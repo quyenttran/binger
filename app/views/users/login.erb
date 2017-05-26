@@ -1,0 +1,11 @@
+<% if @error_messages %>
+  <%= @error_messages %>
+<% end %>
+
+<form action="/users/login" method="post">
+  <label>Email</label>
+  <input type="text" name="user[email]">
+  <label>Password</label>
+  <input type="password" name="user[password]">
+  <button type='submit'>Login</button>
+</form>

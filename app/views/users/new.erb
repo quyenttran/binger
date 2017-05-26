@@ -1,0 +1,15 @@
+<% if @error_messages %>
+  <% @error_messages.each do |error| %>
+    <%= error %><br>
+  <% end %>
+<% end %>
+
+<form action="/users" method="post" id='new-user-form'>
+  <label>Email:</label>
+  <input type="text" name="user[email]">
+  <label>Username:</label>
+  <input type="text" name="user[username]">
+  <label>Password:</label>
+  <input type="password" name="user[password]">
+  <button type='submit'>Register</button>
+</form>

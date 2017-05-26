@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- 
+  <!--
     normalize.css removes cross-browser differences in defaults, e.g.,
     differences in how form elements appear between Firefox and IE
     See: http://necolas.github.com/normalize.css/
@@ -10,6 +10,9 @@
   <!--
     application.css is where you put your styles
   -->
+  <link href='http://fonts.googleapis.com/css?family=Allerta' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/application.css">
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -18,6 +21,18 @@
   <title></title>
 </head>
 <body>
-  <%= yield %>
+  <nav class="main-nav navbar">
+    <span>ELI5</span>
+    <% if current_user %>
+      <a href="/users/<%= current_user.id %>" class='nav-link' id='show-user'><%= current_user.username %></a>
+      <a href="/users/logout" class='nav-link'>Logout</a>
+    <% else %>
+      <a href="/users/new" id='new-user' class='nav-link'>Register</a>
+      <a href="/users/login" id='login' class='nav-link'>Login</a>
+    <% end %>
+  </nav>
+  <div id='main-container'>
+    <%= yield %>
+  </div>
 </body>
 </html>

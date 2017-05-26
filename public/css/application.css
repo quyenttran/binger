@@ -1,0 +1,22 @@
+.main-nav {
+  background-color: #ff000c;
+  position: relative;
+  border-bottom: dotted 1px black;
+}
+
+.nav-link {
+  float: right;
+  padding: 1em;
+}
+
+#search-form {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+span {
+  font-size: 2.2em;
+  font-family: 'Allerta', Helvetica, Arial, sans-serif;
+  margin-left: 5%;
+}
