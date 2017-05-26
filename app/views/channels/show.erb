@@ -2,7 +2,38 @@
   <div class="channel-thumbnail">
     <img src='<%= @channel.artwork_url %>' alt='<%= @channel.name %>' class="img-rounded">
     <h3><%= @channel.name %></h3>
-
   </div>
-
+  <div class="form-group genres-select">
+   <form method="get" action="/channels/<%= @channel.id %>/shows">
+      <label for="sel1">Genres:</label>
+      <select class="form-control" id="sel1">
+        <option>Action</option>
+        <option>Adventure</option>
+        <option>Animation</option>
+        <option>Biography</option>
+        <option>Children</option>
+        <option>Comedy</option>
+        <option>Crime</option>
+        <option>Documentary</option>
+        <option>Drama</option>
+        <option>Family</option>
+        <option>Fantasy</option>
+        <option>Food</option>
+        <option>History</option>
+        <option>Horror</option>
+        <option>Musical</option>
+        <option>Mystery</option>
+        <option>News</option>
+        <option>Reality</option>
+        <option>Romance</option>
+        <option>Sport</option>
+        <option>Suspense</option>
+        <option>Thriller</option>
+        <option>Travel</option>
+        <option>Variety</option>
+        <option>War</option>
+        <option>Western</option>
+      </select>
+    </form>
+  </div>
 </div>
