@@ -8,5 +8,5 @@ def extract_summary(response)
 end
 
 def shorten_content(search)
-  search.content.length > 20 ? "  -  #{search.content[0..100]}..." : "  -  No results"
+  search.content.length > 20 ? "  -  #{search.content[0..150]}..." : "  -  No results"
 end
