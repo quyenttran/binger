@@ -6,3 +6,7 @@ def extract_summary(response)
   page_keys = JSON.parse(response)['query']['pages'].keys
   JSON.parse(response)['query']['pages'][page_keys[0]]['extract'] || "<p>Nothing found!</p>"
 end
+
+def shorten_content(search)
+  search.content.length > 20 ? "  -  #{search.content[0..100]}..." : "  -  No results"
+end
