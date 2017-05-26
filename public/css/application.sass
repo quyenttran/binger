@@ -3,6 +3,8 @@
 
 // ==============={ II. VARIABLES }===============
 $news-cycle: 'News Cycle', sans-serif
+@mixin text-stroke($stroke)
+  text-shadow: ($stroke * -1) ($stroke * -1) 0 #000, ($stroke) ($stroke * -1) 0 #000, ($stroke * -1) $stroke 0 #000, $stroke $stroke 0 #000
 
 
 // ==============={ III. GENERAL TAGS }===============
@@ -31,17 +33,24 @@ button:hover
   transform: translateX(2px) translateY(2px)
   box-shadow: 2px 2px 0px 0px grey
   background-color: yellow
-a:visited
+  @include text-stroke(2px)
   color: white
+a:visited
+  color: black
+.tab-link:hover
+  @include text-stroke(2px)
+  color: yellow
+
 input
   @extend .thick-border
+hr
+  border: solid 3px black
+  width: 100%
 
 // ==============={ IV. STYLING CLASSES }===============
 
 .thick-border
   border: solid 5px black
-.text-stroke
-  text-shadow: -5px -5px 0 #000, 5px -5px 0 #000, -5px 5px 0 #000, 5px 5px 0 #000
 
 .flex-column
   align-items: center
@@ -60,10 +69,13 @@ input
   @extend .flex-column
   padding-bottom: 30px
 .page-header
-  @extend .text-stroke
+  @include text-stroke(6px)
   margin: 30px 0
   color: white
-
+.page-header>a:visited
+  color: white
+.page-header>a:hover
+  color: yellow
 .content-wrapper
   @extend .flex-column
   background-color: white
@@ -83,10 +95,13 @@ input
 .lyrics-container
   font-family: 'Roboto Slab', serif
   width: 100%
+.lyrics-container-show
+
 .lyrics-header
   font-family: $news-cycle
 .lyric-container
   display: inline-block
+
 .lyric_lyric
   display: block
   letter-spacing: 0.1em
@@ -94,3 +109,16 @@ input
   max-width: 150px
 label.lyric_lyric
   margin: 5px 0
+
+.tab-container
+  margin: 10px 0
+.tab-container>h2
+  margin-bottom: 5px
+.tab-link
+  color: black
+.tab-link:visited
+  color: black
+.tab-link:hover
+  @include text-stroke(3px)
+  color: yellow
+

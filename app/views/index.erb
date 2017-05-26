@@ -5,5 +5,13 @@
   <input type="text" name="song">
   <button type="submit">Get Lyrics</button>
 </form>
-
+<br>
+<hr>
+<br>
 <h1>Tabs</h1>
+<% Tab.all.each do |tab| %>
+  <div class="tab-container flex-column">
+    <h2><a class="tab-link" href="/tabs/<%= tab.id %>"><%= tab.song.name %></a></h2>
+    <h3>by <%= tab.song.artist.name %></h3>
+  </div>
+<% end %>

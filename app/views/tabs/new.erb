@@ -1,5 +1,5 @@
 <div class="lyrics-container">
   <h2 class="lyrics-header"><%= @song %></h2>
   <h3 class="lyrics-header">by <%= @artist %></h3>
-  <%= erb :'/lyrics/_lyrics-container', layout: false, locals: { lyrics: lyrics } %>
+  <%= erb :'/lyrics/_lyrics-container', layout: false, locals: { lyrics: lyrics, song: @song, artist: @artist } %>
 </div>

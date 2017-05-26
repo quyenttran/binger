@@ -9,25 +9,21 @@ module LyricsHelpers
   end
 
   def print_lyrics(lyrics)
-    printout = ''
-    lyrics.split(' ').each { |lyric| printout.concat(' ' + print(lyric)) }
+    printout = ""
+    lyrics.split(" ").each_with_index { |lyric, index| printout.concat(" " + print(lyric, index)) }
     printout
   end
 
   private
 
-  def print(lyric)
+  def print(lyric, index)
+    lyric_val = lyric.gsub('\'','&#39;')
     if lyric.downcase == lyric
-      "<div class='lyric-container'><input class='lyric_lyric'><label class='lyric_lyric'>#{lyric}</label></div>"
+      "<div class='lyric-container'><input class='lyric_lyric' name='chords[#{index}]'><label class='lyric_lyric'><input type='hidden' name='lyrics[#{index}]' value='#{lyric_val}'>#{lyric}</label></div>"
     else
-      "<br><div class='lyric-container'><input class='lyric_lyric'><label class='lyric_lyric'>#{lyric}</label></div>"
+      "<br><div class='lyric-container'><input class='lyric_lyric' name='chords[#{index}]'><label class='lyric_lyric'><input type='hidden' name='lyrics[#{index}]' value='#{lyric_val}'>#{lyric}</label></div>"
     end
   end
-
-  # def print_stanza
-
-  # end
-
 
 end
 

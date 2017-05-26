@@ -1,4 +1,6 @@
 <form method="post" action="/tabs">
+  <input type="hidden" name="song" value="<%= song %>">
+  <input type="hidden" name="artist" value="<%= artist %>">
   <%= print_lyrics(lyrics) %>
   <button type="submit">Create Tab!</button>
 </form>

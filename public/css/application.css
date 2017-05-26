@@ -70,16 +70,23 @@ button {
 button:hover {
   transform: translateX(2px) translateY(2px);
   box-shadow: 2px 2px 0px 0px grey;
-  background-color: yellow; }
+  background-color: yellow;
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+  color: white; }
 
 a:visited {
-  color: white; }
+  color: black; }
+
+.tab-link:hover {
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+  color: yellow; }
+
+hr {
+  border: solid 3px black;
+  width: 100%; }
 
 .thick-border, button, input, .content-wrapper {
   border: solid 5px black; }
-
-.text-stroke, .page-header {
-  text-shadow: -5px -5px 0 #000, 5px -5px 0 #000, -5px 5px 0 #000, 5px 5px 0 #000; }
 
 .flex-column, .page-wrapper, .content-wrapper {
   align-items: center;
@@ -96,8 +103,15 @@ a:visited {
   padding-bottom: 30px; }
 
 .page-header {
+  text-shadow: -6px -6px 0 #000, 6px -6px 0 #000, -6px 6px 0 #000, 6px 6px 0 #000;
   margin: 30px 0;
   color: white; }
+
+.page-header > a:visited {
+  color: white; }
+
+.page-header > a:hover {
+  color: yellow; }
 
 .content-wrapper {
   background-color: white;
@@ -125,5 +139,21 @@ a:visited {
 
 label.lyric_lyric {
   margin: 5px 0; }
+
+.tab-container {
+  margin: 10px 0; }
+
+.tab-container > h2 {
+  margin-bottom: 5px; }
+
+.tab-link {
+  color: black; }
+
+.tab-link:visited {
+  color: black; }
+
+.tab-link:hover {
+  text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000, 3px 3px 0 #000;
+  color: yellow; }
 
 /*# sourceMappingURL=application.css.map */

@@ -26,7 +26,7 @@ class APIHelper
   end
 
   def extract_lyrics(payload)
-    JSON.parse(payload)['message']['body']['lyrics']['lyrics_body'].remove("******* This Lyrics is NOT for Commercial use *******")
+    JSON.parse(payload)['message']['body']['lyrics']['lyrics_body'].remove("******* This Lyrics is NOT for Commercial use *******").remove(/\(\d{13}\)/).remove('...')
   end
 
 end
