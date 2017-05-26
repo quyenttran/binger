@@ -4,6 +4,7 @@ class CreateChannels < ActiveRecord::Migration
       t.string :name
       t.integer :guidebox_id
       t.string :artwork_url
+      t.string :short_name
 
       t.timestamps(null: false)
     end

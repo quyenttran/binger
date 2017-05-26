@@ -1,7 +1,10 @@
 <div class="channels-container">
   <div class="channels-list">
     <% @channels.each do |channel| %>
-      <li><img src='<%= channel.artwork_url %>'></li>
+      <li>
+        <a href="/channels/<%= channel.id %>">
+        <img src='<%= channel.artwork_url %>' alt='<%= channel.name %>' class="img-rounded"></a>
+      </li>
     <% end %>
   </div>
 </div>
