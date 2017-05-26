@@ -56,7 +56,7 @@ end
 get '/users/:id' do
   if current_user
     @user = current_user
-    @searches = @user.searches.order('updated_at DESC').limit(10)
+    @searches = @user.searches.order('updated_at DESC').limit(20)
 
     if request.xhr?
       content_type :json
