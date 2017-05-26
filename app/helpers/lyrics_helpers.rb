@@ -18,9 +18,9 @@ module LyricsHelpers
 
   def print(lyric)
     if lyric.downcase == lyric
-      "<span class='lyric_lyric'>#{lyric}</span>"
+      "<div class='lyric-container'><input class='lyric_lyric'><label class='lyric_lyric'>#{lyric}</label></div>"
     else
-      "<br><span class='lyric_lyric'>#{lyric}</span>"
+      "<br><div class='lyric-container'><input class='lyric_lyric'><label class='lyric_lyric'>#{lyric}</label></div>"
     end
   end
 
