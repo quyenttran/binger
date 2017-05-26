@@ -9,7 +9,7 @@ $(document).ready(function() {
       dataType: 'json'
     }).done(function(response){
       $('#results-container').empty()
-      $('#search-form').hide()
+      // $('#search-form').hide()
       $('#results-container').append(response.to_html)
     })
   })
@@ -44,7 +44,7 @@ $(document).ready(function() {
       dataType: 'json'
     }).done(function(response){
       $('#results-container').empty()
-      $('#search-form').hide()
+      // $('#search-form').hide()
       $('#results-container').append(response.to_html)
     })
   })

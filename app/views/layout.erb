@@ -23,6 +23,10 @@
 <body>
   <nav class="main-nav navbar">
     <span>ELI5</span>
+    <form action="/searches" method="post" id='search-form'>
+      <input type="text" name="search">
+      <button type='submit'>Search</button>
+    </form>
     <% if current_user %>
       <a href="/users/<%= current_user.id %>" class='nav-link' id='show-user'><%= current_user.username %></a>
       <a href="/users/logout" class='nav-link'>Logout</a>
@@ -33,6 +37,9 @@
   </nav>
   <div id='main-container'>
     <%= yield %>
+  </div>
+  <div id='bottom-div'>
+
   </div>
 </body>
 </html>
