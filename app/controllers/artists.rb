@@ -1,0 +1,3 @@
+post '/artists' do
+
+end

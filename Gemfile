@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'dotenv'
+
 # PostgreSQL driver
 gem 'pg'
 
@@ -15,7 +17,6 @@ gem 'rake'
 gem 'shotgun', '~>0.9.1'
 
 # Added
-gem 'dotenv'
 gem 'httparty'
 gem 'bcrypt'
 

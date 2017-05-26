@@ -1,0 +1,46 @@
+// ==============={ I. RESETS }===============
+@import reset
+
+// ==============={ II. ??? }===============
+
+// ==============={ III. GENERAL TAGS }===============
+body
+  font-family: 'Droid Sans', sans-serif
+  font-size: 20px
+div
+  box-sizing: border-box
+
+// ==============={ IV. STYLING CLASSES }===============
+
+.cardify
+  border: solid 1px black
+  box-shadow: 2px 2px 2px lightgrey
+.flex-column
+  align-items: center
+  display: flex
+  flex-direction: column
+  justify-content: center
+.flex-row
+  align-items: center
+  display: flex
+  justify-content: center
+
+// ==============={ V. STRUCTURAL CLASSES }===============
+
+// Wrappers
+.page-wrapper
+  @extend .flex-column
+.content-wrapper
+  @extend .flex-column
+  @extend .cardify
+  padding: 50px
+  width: 960px
+
+// Songs
+.tab-form
+
+// Lyrics
+.lyrics-container
+  width: 100%
+.lyric_lyric
+
