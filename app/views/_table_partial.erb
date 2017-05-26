@@ -10,7 +10,7 @@
   </thead>
   <tbody>
     <tr id="<%=city.id%>">
-      <th scope="row"><%= city.name.gsub("+", " ") %></th>
+      <th class="name" scope="row"><%= city.name.gsub("+", " ") %></th>
       <td class="table-data"><%= city.temp %>°F</td>
       <td class="table-data"><%= city.humidity %>%</td>
       <td class="table-data"><%= city.weather %> today</td>

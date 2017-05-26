@@ -3,8 +3,8 @@ body {
   background-image: url("https://images.pexels.com/photos/167699/pexels-photo-167699.jpeg?dl&fit=crop&w=1920&h=1280, https://www.pexels.com/photo/green-pine-trees-covered-with-fogs-under-white-sky-during-daytime-167699/");
 }
 
-
 #font-effect-shadow-multiple:hover, #font-effect-shadow-multiple:focus {
+  font-size: 40px;
   text-decoration: none;
   color: #0088cc;
   text-shadow: none;
@@ -15,12 +15,18 @@ body {
   outline: 0 none;
 }
 
-.banner {
-  /*font-family: 'Permanent Marker', cursive;*/
-  font-size: 40px;
+.table-header:hover, .table-header:focus, .table-data:hover, .table-data:focus {
+  text-decoration: none;
+  color: #0088cc;
+  text-shadow: none;
+  -webkit-transition: 500ms linear 0s;
+  -moz-transition: 500ms linear 0s;
+  -o-transition: 500ms linear 0s;
+  transition: 500ms linear 0s;
+  outline: 0 none;
 }
 
-.city-name:hover, .city-name:focus {
+.city-name:hover, .city-name:focus, .name:hover, .name:focus {
   font-size: 20px;
   text-decoration: none;
   color: #0088cc;
