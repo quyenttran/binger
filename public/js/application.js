@@ -16,6 +16,7 @@ $(document).ready(function() {
         // window.location = "/cities/" + response.id
         $(".divy").append(response.as_html);
         $("#find_city").appendTo(".divy");
+        $(".city-text-field").focus();
       })
   })
 });
