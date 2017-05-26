@@ -1,7 +1,21 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
+  $("body").on("submit", "#find_city", function(e){
+    e.preventDefault();
+    var formData = $(this).serialize();
+    $(this).trigger("reset");
+    // var path = Window.location.pathname;
+    // console.log(path)
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+    $.ajax({
+      method: "POST",
+      url: "/cities",
+      dataType: "json",
+      data: formData
+    })
+      .done(function(response){
+        // window.location = "/cities/" + response.id
+        $(".divy").append(response.as_html);
+        $("#find_city").appendTo(".divy");
+      })
+  })
 });

@@ -1,21 +1,3 @@
 
-<table class="table table-inverse">
-  <thead>
-    <tr>
-      <th>City Name</th>
-      <th>Temperature</th>
-      <th>Humidity</th>
-      <th>Local Conditions</th>
-      <th>Wind Speeds</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row"><%= @city.name.gsub!("+", " ") %></th>
-      <td><%= @city.temp %>°F</td>
-      <td><%= @city.humidity %>%</td>
-      <td><%= @city.weather %> today</td>
-      <td>Wind of <%= @city.wind %>mph</td>
-    </tr>
-  </tbody>
-</table>
+
+<%= erb(:'_table_partial') %>

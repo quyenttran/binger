@@ -19,7 +19,13 @@ post '/cities' do
 
   @new_city = City.new(name: params[:name], temp: temp, humidity: humidity, weather: weather, wind: wind)
   if @new_city.save
+    if request.xhr?
+      content_type :json
+      variable = erb(:'_table_partial', layout: false, locals: {city: @new_city})
+      { as_html: variable}.to_json
+    else
     redirect "/cities/#{@new_city.id}"
+    end
   else
     status 403
     @error_messages = @new_city.error_messages.full_messages

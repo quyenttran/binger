@@ -1,0 +1,20 @@
+<table class="table table-inverse">
+  <thead>
+    <tr>
+      <th class="table-header">City Name</th>
+      <th class="table-header">Temperature</th>
+      <th class="table-header">Humidity</th>
+      <th class="table-header">Local Conditions</th>
+      <th class="table-header">Wind Speeds</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr id="<%=city.id%>">
+      <th scope="row"><%= city.name.gsub("+", " ") %></th>
+      <td class="table-data"><%= city.temp %>°F</td>
+      <td class="table-data"><%= city.humidity %>%</td>
+      <td class="table-data"><%= city.weather %> today</td>
+      <td class="table-data">Wind of <%= city.wind %>mph</td>
+    </tr>
+  </tbody>
+</table>

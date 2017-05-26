@@ -1,6 +1,9 @@
+<h1 class="banner">Check your city's weather!</h1>
+<div class="divy">
+</div>
 <form id="find_city" class="container" action="/cities" method="post">
   <label for="name">City Name</label>
-  <input type="text" required name="name" placeholder="city_name">
-  <input type="submit" value="Search">
+  <input class="city-text-field" type="text" required name="name" placeholder="city_name">
+  <input class="city-submit-button"type="submit" value="Search">
 </form>
 <%= erb(:'_errors') %>
