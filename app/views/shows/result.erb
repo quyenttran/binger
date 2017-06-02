@@ -1,0 +1,15 @@
+
+
+<ul>
+<% result.each do |show| %>
+<li> <%= puts show["show_title"] %>
+<img src="<%= artwork_for(show["show_title"]) %>">
+<p>Title: <%= year_for(show["show_title"]) %></p>
+<p>Rating: <%= rating_for(show["show_title"]) %></p>
+<p>Cast: <%= cast_for(show["show_title"]) %></p>
+<p>Genre: <%= category_for(show["show_title"]) %></p>
+<p>Synopsis: <%= summary_for(show["show_title"]) %></p>
+<p>Directed By: <%= director_for(show["show_title"]) %></p>
+</li>
+<% end %>
+</ul>

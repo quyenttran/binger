@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/application.css">
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/datepicker/0.5.2/datepicker.js"></script>
+  <script src="/js/application.js"></script>
+
+  <title></title>
+</head>
+<body>
+
+  <header role="banner"
+    <nav class="main-nav flex-row">
+      <h3 class="nav-header font-md">SmHart</h3>
+      <ul class="main-nav-ul flex-row font-sm">
+        <% if logged_in? %>
+          <a href="/users/<%= session[:id] %>" class="main-nav-link"><li class="main-nav-li flex-row"><%= User.find(session[:id]).username %></li></a>
+          <a href="/logout" class="main-nav-link"><li class="main-nav-li flex-row">Logout</li></a>
+        <% else %>
+          <a href="/users/new" class="main-nav-link"><li class="main-nav-li flex-row"><span>Register</span></li></a>
+          <a href="/users/login" class="main-nav-link"><li class="main-nav-li flex-row"><span>Login</span></li></a>
+        <% end %>
+        <a href="/" class="main-nav-link"><li class="main-nav-li
+        flex-row"><span>Home</span></li></a>
+        <a class="show-link" href="/shows/new"><button class=><img src="http://static.tvmaze.com/uploads/images/original_untouched/15/37919.jpg"></button></a>
+      </ul>
+    </nav>
+  </header>
+
+  <%= yield %>
+  <p class="snowball">Snowball will fetch your info!<img src="http://static.tvmaze.com/uploads/images/original_untouched/15/37913.jpg"></p>
+</body>
+</html>
