@@ -1,0 +1,13 @@
+.channels-list li {
+  list-style: none;
+}
+
+.channels-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+body {
+  width: 80%;
+  margin: 0 auto;
+}
